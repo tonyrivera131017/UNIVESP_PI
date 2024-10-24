@@ -1,8 +1,23 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404,redirect
 from .models import Produto
+from .forms import ProdutoForm  # Precisamos criar esse formulário em breve
 
 def painel_estoque(request):
     # Busca todos os produtos no banco de dados
     produtos = Produto.objects.all()
     # Renderiza o template HTML e passa os produtos para o contexto
     return render(request, 'estoque/painel.html', {'produtos': produtos})
+
+
+def editar_produto(request, produto_id):
+    produto = get_object_or_404(Produto, pk=produto_id)  # Obtém o produto pelo ID
+
+    if request.method == 'POST':
+        form = ProdutoForm(request.POST, instance=produto)
+        if form.is_valid():
+            form.save()
+            return redirect('painel_estoque')  # Redireciona para a página principal do estoque após salvar
+    else:
+        form = ProdutoForm(instance=produto)
+
+    return render(request, 'estoque/editar_produto.html', {'form': form})

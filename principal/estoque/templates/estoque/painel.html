@@ -89,9 +89,10 @@
                 <td>{{ produto.quantidade }}</td>
                 <td>R$ {{ produto.preco }}</td>
                 <td>
-                    <button class="btn">Editar</button>
+                    <a href="{% url 'editar_produto' produto.id %}" class="btn">Editar</a>
                     <button class="btn">Excluir</button>
                 </td>
+
             </tr>
             {% endfor %}
         </table>
