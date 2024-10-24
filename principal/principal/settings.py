@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'principal.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',  # Se estiver usando PostgreSQL, por exemplo
+        'NAME': 'bd_SCE',
+        'USER': 'pi_univesp',
+        'PASSWORD': 'PIunivesp',
+        'HOST': 'database-univesp.chakokagese6.us-east-1.rds.amazonaws.com',  # Pode ser um IP ou um domínio
+        'PORT': '5432',  # Porta do banco de dados, geralmente 5432 para PostgreSQL
     }
 }
 
