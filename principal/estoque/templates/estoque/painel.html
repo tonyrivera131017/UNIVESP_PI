@@ -82,20 +82,18 @@
                 <th>Preço</th>
                 <th>Ações</th>
             </tr>
+            {% for produto in produtos %}
             <tr>
-                <td>1</td>
-                <td>Amortecedor Dianteiro</td>
-                <td>50</td>
-                <td>R$ 150,00</td>
-                <td><button class="btn">Editar</button> <button class="btn">Excluir</button></td>
+                <td>{{ produto.id }}</td>
+                <td>{{ produto.nome }}</td>
+                <td>{{ produto.quantidade }}</td>
+                <td>R$ {{ produto.preco }}</td>
+                <td>
+                    <button class="btn">Editar</button>
+                    <button class="btn">Excluir</button>
+                </td>
             </tr>
-            <tr>
-                <td>2</td>
-                <td>Pneu 175/70 R13</td>
-                <td>30</td>
-                <td>R$ 250,00</td>
-                <td><button class="btn">Editar</button> <button class="btn">Excluir</button></td>
-            </tr>
+            {% endfor %}
         </table>
     </div>
 </body>
