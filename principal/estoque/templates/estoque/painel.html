@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Gerenciamento de Estoque</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+        nav {
+            margin: 15px;
+        }
+        nav a {
+            margin-right: 10px;
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+        .container {
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Painel de Gerenciamento de Estoque</h1>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Produtos</a>
+        <a href="#">Entradas</a>
+        <a href="#">Saídas</a>
+        <a href="#">Relatórios</a>
+    </nav>
+
+    <div class="container">
+        <h2>Lista de Produtos</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Nome do Produto</th>
+                <th>Quantidade</th>
+                <th>Preço</th>
+                <th>Ações</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Amortecedor Dianteiro</td>
+                <td>50</td>
+                <td>R$ 150,00</td>
+                <td><button class="btn">Editar</button> <button class="btn">Excluir</button></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Pneu 175/70 R13</td>
+                <td>30</td>
+                <td>R$ 250,00</td>
+                <td><button class="btn">Editar</button> <button class="btn">Excluir</button></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
