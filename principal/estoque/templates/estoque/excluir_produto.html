@@ -4,58 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excluir Produto</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            color: #333;
-            text-align: center;
-        }
-        .btn {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 3px;
-            cursor: pointer;
-            text-decoration: none;
-            margin-top: 15px;
-        }
-        .btn:hover {
-            background-color: #45a049;
-        }
-        .btn-secondary {
-            background-color: #ccc;
-            color: black;
-            text-decoration: none;
-        }
-        .btn-secondary:hover {
-            background-color: #bbb;
-        }
-        .actions {
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
         <h2>Tem certeza que deseja excluir o produto "{{ produto.nome }}"?</h2>
         <form method="post" class="actions">
             {% csrf_token %}
-            <button type="submit" class="btn">Sim, excluir</button>
-            <a href="{% url 'painel_estoque' %}" class="btn btn-secondary">Cancelar</a>
+            <button type="submit">Sim, excluir</button>
+            <a href="{% url 'painel_estoque' %}">Cancelar</a>
         </form>
     </div>
 </body>
