@@ -20,7 +20,7 @@ def editar_produto(request, produto_id):
         form = ProdutoForm(request.POST, instance=produto)
         if form.is_valid():
             form.save()
-            return redirect('painel_estoque')  # Redireciona para a página principal do estoque após salvar
+            return redirect('produtos')  # Redireciona para a página principal do estoque após salvar
     else:
         form = ProdutoForm(instance=produto)
 
@@ -30,7 +30,7 @@ def excluir_produto(request, produto_id):
     produto = get_object_or_404(Produto, pk=produto_id)  # Obtém o produto pelo ID
     if request.method == 'POST':
         produto.delete()
-        return redirect('painel_estoque')  # Redireciona para a página principal do estoque após excluir
+        return redirect('produtos')  # Redireciona para a página principal do estoque após excluir
     return render(request, 'estoque/excluir_produto.html', {'produto': produto})
 
 def adicionar_produto(request):
@@ -38,7 +38,7 @@ def adicionar_produto(request):
         form = ProdutoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('painel_estoque')  # Redireciona para a página principal do estoque após salvar
+            return redirect('produtos')  # Redireciona para a página principal do estoque após salvar
     else:
         form = ProdutoForm()
 
