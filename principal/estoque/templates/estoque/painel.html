@@ -90,7 +90,7 @@
                 <td>R$ {{ produto.preco }}</td>
                 <td>
                     <a href="{% url 'editar_produto' produto.id %}" class="btn">Editar</a>
-                    <button class="btn">Excluir</button>
+                    <a href="{% url 'excluir_produto' produto.id %}" class="btn">Excluir</a>
                 </td>
 
             </tr>

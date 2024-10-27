@@ -21,3 +21,10 @@ def editar_produto(request, produto_id):
         form = ProdutoForm(instance=produto)
 
     return render(request, 'estoque/editar_produto.html', {'form': form})
+
+def excluir_produto(request, produto_id):
+    produto = get_object_or_404(Produto, pk=produto_id)  # Obtém o produto pelo ID
+    if request.method == 'POST':
+        produto.delete()
+        return redirect('painel_estoque')  # Redireciona para a página principal do estoque após excluir
+    return render(request, 'estoque/excluir_produto.html', {'produto': produto})
