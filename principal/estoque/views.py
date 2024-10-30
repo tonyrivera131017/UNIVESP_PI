@@ -2,7 +2,7 @@ from django.shortcuts import render,get_object_or_404,redirect
 from .models import Produto,MercadoLivreAd
 from .forms import ProdutoForm  # Precisamos criar esse formulário em breve
 from .services import *  # Importe a função que criamos para atualizar no Mercado Livre
-caminho_arquivo_token = r'C:\Users\brasr\OneDrive\UNIVESP_py\principal\estoque\refresh_token.json'
+caminho_arquivo_token = './refresh_token.json'
 def produtos(request):
     # Busca todos os produtos no banco de dados
     produtos = Produto.objects.all()
