@@ -1,21 +1,64 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel de Gerenciamento de Estoque</title>
+    <title>SISControl</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
+
 <body>
-    <header>
-        <h1>Painel de Gerenciamento de Estoque</h1>
+    <header class="cabecalho">
+        <h1 class="logo">SISControl</h1>
+        <nav>
+            <ul class="botoes">
+                <li>
+                    <a class ="botao" href="{% url 'home' %}">Home</a>
+                </li>
+                <li>
+                    <a class="botao" href="{% url 'produtos' %}">Produtos</a>
+                </li>
+                <li>
+                    <a class="botao" href="{% url 'cadastrar' %}">Cadastrar</a>
+                </li>
+                <!-- <a href="#">Entradas</a>
+                    <a href="#">Saídas</a>
+                    <a href="#">Relatórios</a> -->
+            </ul>
+        </nav>
     </header>
 
-    <nav>
-        <a href="#">Home</a>
-        <a href="{% url 'produtos' %}">Produtos</a>
-        <a href="#">Entradas</a>
-        <a href="#">Saídas</a>
-        <a href="#">Relatórios</a>
-    </nav>
+    <main class="pagina">
+        <section class="sessao">
+            <h2 class="subtitulo">Gerencie o seu estoque</h2>
+            <p>Com o <span class="destaque">SISControl</span>, você consegue:</p>
+            <ul class="lista_funcionalidades">
+                <li>Visualizar todos os produtos do seu negócio</li>
+                <li>Atualizar seu estoque com facilidade</li>
+                <li>Cadastrar qualquer tipo de produto</li>
+                <li>Desativar produtos fora de linha</li>
+                <p>Simples, rápido e eficiente!</p>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p>₢ 2024 SISControl. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- <section>
+        <nav class="botoes">
+            <ul>
+                <a href="#">Home</a>
+                <a href="{% url 'produtos' %}">Produtos</a>
+                <a href="#">Entradas</a>
+                <a href="#">Saídas</a>
+                <a href="#">Relatórios</a>
+            </ul>
+        </nav>
+    </section> -->
 </body>
+
 </html>

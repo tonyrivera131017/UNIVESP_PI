@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body{
+    background-color: #f3f3f5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cabecalho {
+    background-color: #2d5399;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 80px;
+}
+
+.botoes {
+list-style: none;
+display: flex;
+gap: 20px;
+}
+
+.botao {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.logo{
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.pagina {
+    padding: 0 80px;
+}
+
+.sessao {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.subtitulo {
+    color: #2d5399;
+}
+
+.destaque {
+    color: #2d5399;
+    font-weight: bold;
+}
+
+.lista_funcionalidades {
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.rodape {
+    background-color: #2d5399;
+    padding: 10px 0;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+}
