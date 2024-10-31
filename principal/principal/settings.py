@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-py1v*(@eq@806zbrb*##s0uq^v6-n+3xv4@bu2lptn-_&ftwzo
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['3.211.30.203', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -126,3 +126,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+STATIC_ROOT = "/home/ubuntu/UNIVESP_PI/principal/static/"
