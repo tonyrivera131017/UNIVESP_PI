@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produtos</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/produtos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/produtos2.css' %}">
 </head>
 
 <body>
@@ -22,7 +22,7 @@
                     <a class="botao" href="{% url 'produtos' %}">Produtos</a>
                 </li>
                 <li>
-                    <a class="botao" href="{% url 'cadastrar' %}">Cadastrar</a>
+                    <a class="botao" href="{% url 'cadastrar2' %}">Cadastrar</a>
                 </li>
                 <!-- <a href="{% url 'home' %}">Home</a>
         <a href="#">Produtos</a> -->
@@ -33,66 +33,54 @@
         </nav>
     </header>
 
+   <!--- <main class="pagina">
+        <section class="sessao">
+            <h2 class="subtitulo">Lista de Produtos</h2>
+            <div id="container" class="container">
+                 <div class="card">
+                    <h3>Nome do Produto</h3>
+                    <p><strong>Preço:</strong> R$ 100,00</p>
+                    <p><strong>Qauntidade:</strong>10</p>
+                </div>
+            </div>    
+        </section>
+    </main> -->
+
     <main class="pagina">
         <section class="sessao">
             <h2 class="subtitulo">Lista de Produtos</h2>
-            <div class="container">
-                <div class="card">
-                    <h3>Nome do produto1</h3>
-                    <p><strong>Preço:</strong> R$ 100,00</p>
-                    <p><strong>Qauntidade:</strong>10</p>
-                </div>
-
-                <div class="card">
-                    <h3>Nome do produto2</h3>
-                    <p><strong>Preço:</strong> R$ 100,00</p>
-                    <p><strong>Qauntidade:</strong>10</p>
-                </div>
-
-                <div class="card">
-                    <h3>Nome do produto3</h3>
-                    <p><strong>Preço:</strong> R$ 100,00</p>
-                    <p><strong>Qauntidade:</strong>10</p>
-                </div>
-
-                <div class="card">
-                    <h3>Nome do produto4</h3>
-                    <p><strong>Preço:</strong> R$ 100,00</p>
-                    <p><strong>Qauntidade:</strong>10</p>
+            <div id="container" class="container">
+                <div class="lista-produtos">
+                    <table>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome do Produto</th>
+                            <th>Quantidade</th>
+                            <th>Preço</th>
+                            <th>Ações</th>
+                        </tr>
+                        {% for produto in produtos %}
+                        <tr>
+                            <td>{{ produto.id }}</td>
+                            <td>{{ produto.nome }}</td>
+                            <td>{{ produto.quantidade }}</td>
+                            <td>R$ {{ produto.preco }}</td>
+                            <td>
+                                <div>
+                                <a class="botao_acao1" href="{% url 'editar_produto' produto.id %}">Editar</a>
+                                <a class="botao_acao2" href="{% url 'excluir_produto' produto.id %}">Excluir</a>
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
                 </div>
             </div>
-
         </section>
     </main>
 
-    <!-- <div class="container">
-        Lista de Produtos
-        <div class="lista-produtos">
-            <h2>Lista de Produtos</h2>
-            <table>
-                <tr>
-                    <th>ID</th>
-                    <th>Nome do Produto</th>
-                    <th>Quantidade</th>
-                    <th>Preço</th>
-                    <th>Ações</th>
-                </tr>
-                {% for produto in produtos %}
-                <tr>
-                    <td>{{ produto.id }}</td>
-                    <td>{{ produto.nome }}</td>
-                    <td>{{ produto.quantidade }}</td>
-                    <td>R$ {{ produto.preco }}</td>
-                    <td>
-                        <a href="{% url 'editar_produto' produto.id %}">Editar</a>
-                        <a href="{% url 'excluir_produto' produto.id %}">Excluir</a>
-                    </td>
-                </tr>
-                {% endfor %}
-            </table>
-        </div>
 
-     Formulário para Cadastrar Novo Produto
+    <!-- Formulário para Cadastrar Novo Produto
     <div class="formulario-produto">
         <h2>Cadastrar Novo Produto</h2>
         <form action="{% url 'adicionar_produto' %}" method="POST">
@@ -108,12 +96,13 @@
 
             <button type="submit">Cadastrar</button>
         </form>
-    </div>
     </div> -->
 
     <footer class="rodape">
         <p>₢ 2024 SISControl. Todos os direitos reservados.</p>
     </footer>
+
+    <!-- <script src="{% static 'js/produtos.js' %}"></script> -->
 
 </body>
 

@@ -1,0 +1,80 @@
+/* Estilo para a estrutura principal */
+/* .pagina {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 20px;
+} */
+
+.sessao h2 {
+    font-size: 24px;
+    color:#2d5399;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo do container */
+.container {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo da tabela */
+.lista-produtos table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.lista-produtos th,
+.lista-produtos td {
+    padding: 12px;
+    text-align: left;
+}
+
+.lista-produtos th {
+    background-color: #2d5399;
+    color: white;
+    font-weight: bold;
+}
+
+.lista-produtos tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.lista-produtos tr:hover {
+    background-color: #ddd;
+}
+
+/* Estilo para links de ação
+.lista-produtos td a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.lista-produtos td a:hover {
+    color: #2d7a32;
+    text-decoration: underline;
+} */
+
+.botao_acao1, .botao_acao2{
+    background-color: #2d5399;
+    font-size: 16px;
+    padding: 15px 15px;
+    border: none;
+    border-radius: 40px;
+    color: white;
+    cursor: pointer;
+    transition: 0,3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.subtitulo {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

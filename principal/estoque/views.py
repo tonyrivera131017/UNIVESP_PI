@@ -16,6 +16,9 @@ def home(request):
 def cadastrar(request):
     return render(request, "estoque/cadastrar.html")
 
+def cadastrar2(request):
+    return render(request, "estoque/cadastrar2.html")
+
 
 def editar_produto(request, produto_id):
     produto = get_object_or_404(Produto, pk=produto_id)  # Obtém o produto pelo ID

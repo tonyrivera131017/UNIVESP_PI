@@ -1,19 +1,53 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Produto</title>
+    <title>Editar</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/editar_produto.css'%}">
 </head>
+
 <body>
-    <div class="container">
-        <h2>Editar Produto</h2>
-        <form method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Salvar Alterações</button>
-            <a href="{% url 'produtos' %}">Cancelar</a>
-        </form>
-    </div>
+    <header class="cabecalho">
+        <h1 class="logo">SISControl</h1>
+        <nav>
+            <ul class="botoes">
+                <li>
+                    <a class="botao" href="{% url 'home' %}">Home</a>
+                </li>
+                <li>
+                    <a class="botao" href="{% url 'produtos' %}">Produtos</a>
+                </li>
+                <li>
+                    <a class="botao" href="{% url 'cadastrar' %}">Cadastrar</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main class="pagina">
+        <section class="sessao">
+            <div class="container">
+                <h2 class="subtitulo" >Editar Produto</h2>
+                <form id="formulario_produto" class="formulario_produto"  method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div>
+                    <button class="botao_editar" type="submit">Salvar Alterações</button>
+                    <a class="botao_editar2" href="{% url 'produtos' %}">Cancelar</a>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
 </body>
+
+<footer class="rodape">
+    <p>₢ 2024 SISControl. Todos os direitos reservados.</p>
+</footer>
+
 </html>

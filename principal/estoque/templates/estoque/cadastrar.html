@@ -22,7 +22,7 @@
                     <a class="botao" href="{% url 'produtos' %}">Produtos</a>
                 </li>
                 <li>
-                    <a class="botao" href="{% url 'cadastrar' %}">Cadastrar</a>
+                    <a class="botao" href="{% url 'cadastrar2' %}">Cadastrar</a>
                 </li>
             </ul>
         </nav>
@@ -30,7 +30,7 @@
 
     <main class="pagina">
         <section class="sessao">
-            <form class="formulario_produto">
+            <form id="formulario_produto" class="formulario_produto">
                 <h2 class="subtitulo">Cadastrar Produtos</h2>
                 <div class="divisao_form">
                     <label for="nome_produto">Nome do Produto</label>
@@ -39,7 +39,7 @@
 
                 <div class="divisao_form">
                     <label for="preco">Preço (R$)</label>
-                    <input type="number" id="preco" name="preco" placeholder="Digite o preço do produto">
+                    <input type="text" id="preco" name="preco" placeholder="Digite o preço do produto">
                 </div>
 
                 <div class="divisao_form">
@@ -47,7 +47,7 @@
                     <input type="number" id="qtde" name="qtde" placeholder="Digite a quantidade do produto">
                 </div>
 
-                <button type="submit" class="botao_form">Cadastrar</button>
+                <button class="botao_form">Cadastrar</button>
             </form>
         </section>
     </main>
@@ -55,6 +55,8 @@
     <footer class="rodape">
         <p>₢ 2024 SISControl. Todos os direitos reservados.</p>
     </footer>
+
+    <script src="{% static 'js/script.js' %}"></script>
 
 </body>
 

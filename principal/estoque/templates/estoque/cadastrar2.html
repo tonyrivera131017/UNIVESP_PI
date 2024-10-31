@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cadastrar.css' %}">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <h1 class="logo">SISControl</h1>
+        <nav>
+            <ul class="botoes">
+                <li>
+                    <a class="botao" href="{% url 'home' %}">Home</a>
+                </li>
+                <li>
+                    <a class="botao" href="{% url 'produtos' %}">Produtos</a>
+                </li>
+                <li>
+                    <a class="botao" href="{% url 'cadastrar2' %}">Cadastrar</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="pagina">
+        <section class="sessao">
+            <div class="formulario-produto">
+                <h2 class="subtitulo">Cadastrar Novo Produto</h2>
+                <form id="formulario_produto" class="formulario_produto" 
+                action="{% url 'adicionar_produto' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="divisao_form">
+                        <label for="nome">Nome do Produto:</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+
+                    <div class="divisao_form">
+                        <label for="quantidade">Quantidade:</label>
+                        <input type="number" id="quantidade" name="quantidade" required>
+                    </div>
+
+                    <div class="divisao_form">
+                        <label for="preco">Preço:</label>
+                        <input type="text" id="preco" name="preco" required>
+                    </div>
+
+                    <button class="botao_form" type="submit">Cadastrar</button>
+                </form>
+            </div>
+        <section class="sessao">
+    <main class="pagina">
+
+        <footer class="rodape">
+            <p>₢ 2024 SISControl. Todos os direitos reservados.</p>
+        </footer>
+
+
+</body>
+
+</html>
