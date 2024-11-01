@@ -6,8 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produtos</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/produtos2.css' %}">
+    <!-- Importando CSS globalmente -->
+    {% load static %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/produtos.css' %}">
 </head>
 
 <body>
@@ -22,7 +24,7 @@
                     <a class="botao" href="{% url 'produtos' %}">Produtos</a>
                 </li>
                 <li>
-                    <a class="botao" href="{% url 'cadastrar2' %}">Cadastrar</a>
+                    <a class="botao" href="{% url 'cadastrar' %}">Cadastrar</a>
                 </li>
                 <!-- <a href="{% url 'home' %}">Home</a>
         <a href="#">Produtos</a> -->
@@ -42,7 +44,7 @@
                     <p><strong>Preço:</strong> R$ 100,00</p>
                     <p><strong>Qauntidade:</strong>10</p>
                 </div>
-            </div>    
+            </div>
         </section>
     </main> -->
 
@@ -69,6 +71,9 @@
                                 <div>
                                 <a class="botao_acao1" href="{% url 'editar_produto' produto.id %}">Editar</a>
                                 <a class="botao_acao2" href="{% url 'excluir_produto' produto.id %}">Excluir</a>
+                                {% for anuncio in produto.anuncios.all %}
+                                <a class="botao_acao3" target="_blank" href="https://produto.mercadolivre.com.br/{{ anuncio.mlb_id_formatado }}">Anúncio</a>
+                                {% endfor %}
                                 </div>
                             </td>
                         </tr>

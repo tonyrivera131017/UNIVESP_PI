@@ -1,0 +1,27 @@
+/* Specific Styles for Home Page */
+.sessao {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 40px auto;
+    max-width: 800px;
+}
+
+.subtitulo {
+    font-size: 28px;
+    color: #2d5399;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.lista_funcionalidades {
+    padding-left: 20px;
+    list-style-type: disc;
+}
+
+.lista_funcionalidades li {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 8px;
+}

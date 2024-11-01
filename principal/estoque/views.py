@@ -2,23 +2,27 @@ from django.shortcuts import render,get_object_or_404,redirect
 from .models import Produto,MercadoLivreAd
 from .forms import ProdutoForm  # Precisamos criar esse formulário em breve
 from .services import *  # Importe a função que criamos para atualizar no Mercado Livre
-caminho_arquivo_token = './refresh_token.json'
+caminho_arquivo_token = 'estoque/refresh_token.json'
 def produtos(request):
     # Busca todos os produtos no banco de dados
     produtos = Produto.objects.all()
     # Renderiza o template HTML e passa os produtos para o contexto
     return render(request, 'estoque/produtos.html', {'produtos': produtos})
 
-
+def produto_anuncios(request, produto_id):
+    # Obtém o produto pelo ID
+    produto = get_object_or_404(Produto, pk=produto_id)
+    # Busca os anúncios associados a esse produto
+    anuncios = produto.anuncios.all()
+    for anuncio in anuncios:
+        anuncio.mlb_id_formatado = anuncio.mlb_id[:3] + '-' + anuncio.mlb_id[3:]
+    # Renderiza o template HTML e passa os anúncios para o contexto
+    return render(request, 'estoque/produtos.html', {'produto': produto, 'anuncios': anuncios})
 def home(request):
     return render(request, 'estoque/home.html')
 
 def cadastrar(request):
     return render(request, "estoque/cadastrar.html")
-
-def cadastrar2(request):
-    return render(request, "estoque/cadastrar2.html")
-
 
 def editar_produto(request, produto_id):
     produto = get_object_or_404(Produto, pk=produto_id)  # Obtém o produto pelo ID

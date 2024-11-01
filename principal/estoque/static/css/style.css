@@ -1,76 +1,137 @@
+/* Global Reset and Base Styling */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
 html,
 body {
     height: 100%;
+    background-color: #fafafa;
+    color: #333;
+    line-height: 1.6;
 }
 
-body{
-    background-color: #f3f3f5;
+body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
+/* Header Styling */
 .cabecalho {
     background-color: #2d5399;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 80px;
+    padding: 15px 30px;
+    border-bottom: 3px solid #1b3868;
+}
+
+.logo {
+    color: #ffffff;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
 }
 
 .botoes {
-list-style: none;
-display: flex;
-gap: 20px;
+    list-style: none;
+    display: flex;
+    gap: 15px;
 }
 
 .botao {
-    color: white;
+    color: #ffffff;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 8px 16px;
+    transition: background-color 0.2s ease;
+    border-radius: 4px;
+    background-color: #1b3868;
 }
 
-.logo{
-    color: white;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+.botao:hover {
+    background-color: #3a4f8a;
 }
 
-.pagina {
-    padding: 0 80px;
-}
+/* Main Content Styling */
+/*.pagina {*/
+/*    padding: 20px;*/
+/*    flex-grow: 1;*/
+/*    max-width: 1000px;*/
+/*    margin: 20px auto;*/
+/*}*/
 
 .sessao {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
 }
 
 .subtitulo {
     color: #2d5399;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .destaque {
     color: #2d5399;
-    font-weight: bold;
+    font-weight: 500;
 }
 
-.lista_funcionalidades {
-    padding-left: 15px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
+/* Footer Styling */
 .rodape {
     background-color: #2d5399;
-    padding: 0 10px;
+    padding: 15px;
     text-align: center;
-    color: white;
-    font-size: 18px;
+    color: #ffffff;
+    font-size: 14px;
+    margin-top: 20px;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cabecalho {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .pagina {
+        padding: 15px;
+    }
+
+    .sessao {
+        padding: 15px;
+    }
+
+    .botao {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+}
+
+/* Improvements Summary */
+/*
+1. Smoother Design:
+   - Reduced padding and adjusted border-radius for a sleeker look.
+2. Typography Improvements:
+   - Improved font sizes and adjusted padding for better readability.
+3. Hover Effects:
+   - Made hover effects more subtle and minimal for a clean design.
+4. Consistent Styling:
+   - Ensured consistent padding, margins, and font styles across all elements.
+5. Responsive Design:
+   - Enhanced mobile-friendliness with improved spacing for smaller screens.
+*/
