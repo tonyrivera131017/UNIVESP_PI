@@ -1,0 +1,84 @@
+.pagina {
+    padding: 20px 40px;
+    width: auto;
+    max-width: 1200px;
+    margin: 20px auto;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.sessao {
+    padding: 20px;
+    width: auto;
+    border-radius: 8px;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.subtitulo {
+    font-size: 30px;
+    color: #050505;
+    text-align: left;
+}
+
+.lista-produtos table {
+    width: auto;
+    border-collapse: collapse;
+    margin-top: 15px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    table-layout: auto; /* Allow the table to adjust based on content */
+    word-wrap: break-word; /* Allow long strings to wrap within cells */
+}
+
+.lista-produtos th,
+.lista-produtos td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 15px;
+}
+
+.lista-produtos th {
+    background-color: #eaeaea;
+    color: #000000;
+    width: auto;
+    text-transform: uppercase;
+}
+
+.lista-produtos tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.lista-produtos tr:hover {
+    background-color: #f1f1f1;
+}
+
+.botao_acao1,
+.botao_acao2,
+.botao_acao3 {
+    background-color: #2d5399;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    margin-right: 5px;
+}
+
+.botao_acao1:hover,
+.botao_acao2:hover,
+.botao_acao3:hover {
+    background-color: #1b3868;
+}
+
+.rodape {
+    background-color: #2d5399;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    margin-top: 20px;
+}

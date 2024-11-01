@@ -1,0 +1,17 @@
+.botao_excluirsim {
+    background-color: #2d5399;
+    font-size: 20px;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    transition: 0,3s ease-in-out;
+    &:hover {
+        background-color: #08307c;
+    }
+}
+
+/* .botao_excluirsim:hover {
+    background-color: #08307c;
+} */

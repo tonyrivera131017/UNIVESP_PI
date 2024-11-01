@@ -1,18 +1,48 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Excluir Produto</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/excluir_produto.css'%}">
 </head>
+
 <body>
+    <header class="cabecalho">
+        <h1 class="logo">SISControl</h1>
+        <nav>
+            <ul class="botoes">
+                <li>
+                    <a class="botao" href="{% url 'home' %}">Home</a>
+                </li>
+                <li>
+                    <a class="botao" href="{% url 'produtos' %}">Produtos</a>
+                </li>
+                <li>
+                    <a class="botao" href="{% url 'cadastrar' %}">Cadastrar</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
     <div class="container">
         <h2>Tem certeza que deseja excluir o produto "{{ produto.nome }}"?</h2>
         <form method="post" class="actions">
             {% csrf_token %}
-            <button type="submit">Sim, excluir</button>
-            <a href="{% url 'produtos' %}">Cancelar</a>
+            <div>
+                <button class="botao_excluirsim" type="submit">Sim, excluir</button>
+                <button class="botao_excluirsim" href="{% url 'produtos' %}">Cancelar</button>
+            </div>
         </form>
     </div>
 </body>
+
+<footer class="rodape">
+    <p>₢ 2024 SISControl. Todos os direitos reservados.</p>
+</footer>
+
 </html>

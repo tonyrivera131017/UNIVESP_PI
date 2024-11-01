@@ -1,0 +1,129 @@
+/* CSS para a Tela de Edição de Produto */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+/* Corpo da Página */
+.pagina {
+    display: flex;
+    /* centralizar */
+    justify-content: center;
+    padding: 10px;
+}
+
+.sessao {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+}
+
+/* Título */
+.subtitulo {
+    font-size: 22px;
+    color: #2a3b8e;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Formulário */
+.formulario_produto {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formulario_produto label {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+
+.formulario_produto input[type="text"],
+.formulario_produto input[type="number"],
+.formulario_produto input[type="number"] {
+    padding: 10px;
+    font-size: 14px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+.formulario_produto input:focus {
+    border-color: #2a3b8e;
+    outline: none;
+}
+
+/* Botões */
+.botao_editar {
+    background-color: #2d5298;
+    color: #ffffff;
+    padding: 10px 0;
+    font-size: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    transition: background-color 0.3s ease, box-shadow 0.2s ease;
+}
+
+.botao_editar:hover {
+    background-color: #2d5298;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.botao_editar2 {
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 15px;
+    font-weight: bold;
+    color: #2d5298;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.botao_editar2:hover {
+    background-color: #e0e0e0;
+}
+
+/* Rodapé */
+.rodape {
+    background-color: #2d5298;
+    color: #ffffff;
+    padding: 10px;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 30px;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .sessao {
+        padding: 20px;
+    }
+
+    .subtitulo {
+        font-size: 18px;
+    }
+
+    .botao,
+    .botao_editar,
+    .botao_editar2 {
+        font-size: 14px;
+        padding: 8px 0;
+    }
+}
