@@ -1,17 +1,91 @@
-.botao_excluirsim {
-    background-color: #2d5399;
-    font-size: 20px;
-    padding: 10px 10px;
-    border: none;
-    border-radius: 6px;
-    color: white;
-    cursor: pointer;
-    transition: 0,3s ease-in-out;
-    &:hover {
-        background-color: #08307c;
-    }
+/* Global Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o body ocupe toda a altura da janela */
 }
 
-/* .botao_excluirsim:hover {
-    background-color: #08307c;
-} */
+
+.logo {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.botoes {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.botao {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: #1b3868;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.botao:hover {
+    background-color: #3a4f8a;
+}
+
+/* Main Content */
+.container {
+    /*flex: 1; !* Faz o container ocupar o espaço restante entre o cabeçalho e o rodapé *!*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 500px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.container h2 {
+    font-size: 24px;
+    color: #2d5399;
+    margin-bottom: 20px;
+}
+
+/* Actions */
+.actions div {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.botao_excluirsim {
+    background-color: #ff4d4f;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.botao_excluirsim:hover {
+    background-color: #d9363e;
+    transform: scale(1.05);
+}
+
+/* Footer */
+.rodape {
+    background-color: #2d5399;
+    padding: 15px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 14px;
+}
