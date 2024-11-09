@@ -121,6 +121,20 @@ body {
         font-size: 14px;
     }
 }
+.grafico-secao {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.grafico-secao canvas {
+    max-width: 100%;
+    height: 400px; /* Altura padrão para o gráfico */
+    margin-top: 15px;
+}
 
 /* Improvements Summary */
 /*

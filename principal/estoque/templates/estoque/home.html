@@ -32,34 +32,93 @@
     </header>
 
     <main class="pagina">
-        <section class="sessao">
-            <h2 class="subtitulo">Gerencie o seu estoque</h2>
-            <p>Com o <span class="destaque">SISControl</span>, você consegue:</p>
-            <ul class="lista_funcionalidades">
-                <li>Visualizar todos os produtos do seu negócio</li>
-                <li>Atualizar seu estoque com facilidade</li>
-                <li>Cadastrar qualquer tipo de produto</li>
-                <li>Desativar produtos fora de linha</li>
-                <p>Simples, rápido e eficiente!</p>
-            </ul>
+<!--        <section class="sessao">-->
+<!--            <h2 class="subtitulo">Gerencie o seu estoque</h2>-->
+<!--            <p>Com o <span class="destaque">SISControl</span>, você consegue:</p>-->
+<!--            <ul class="lista_funcionalidades">-->
+<!--                <li>Visualizar todos os produtos do seu negócio</li>-->
+<!--                <li>Atualizar seu estoque com facilidade</li>-->
+<!--                <li>Cadastrar qualquer tipo de produto</li>-->
+<!--                <li>Desativar produtos fora de linha</li>-->
+<!--                <p>Simples, rápido e eficiente!</p>-->
+<!--            </ul>-->
+<!--        </section>-->
+
+        <section class="grafico">
+        <h2 class="subtitulo">Top 5 Produtos com Maior Estoque</h2>
+        <canvas id="grafico"></canvas>
         </section>
+
     </main>
 
     <footer class="rodape">
         <p>₢ 2024 SISControl. Todos os direitos reservados.</p>
     </footer>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Dados do gráfico
+    const nomes = {{ nomes|safe }};
+    const quantidades = {{ quantidades|safe }};
 
-    <!-- <section>
-        <nav class="botoes">
-            <ul>
-                <a href="#">Home</a>
-                <a href="{% url 'produtos' %}">Produtos</a>
-                <a href="#">Entradas</a>
-                <a href="#">Saídas</a>
-                <a href="#">Relatórios</a>
-            </ul>
-        </nav>
-    </section> -->
+    // Configuração do gráfico
+    const ctx = document.getElementById('grafico').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: nomes,
+            datasets: [{
+                label: 'Quantidade em Estoque',
+                data: quantidades,
+                backgroundColor: [
+                    '#2d5399',
+                    '#3a6bbf',
+                    '#4a8de1',
+                    '#5aa9f3',
+                    '#72c2ff'
+                ],
+                borderColor: '#1b3868',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: true,
+                    labels: {
+                        color: '#333',
+                        font: {
+                            size: 14
+                        }
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        color: '#555',
+                        font: {
+                            size: 12
+                        }
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        color: '#555',
+                        font: {
+                            size: 12
+                        }
+                    },
+                    grid: {
+                        color: 'rgba(0, 0, 0, 0.1)'
+                    }
+                }
+            }
+        }
+    });
+</script>
+
 </body>
 
 </html>

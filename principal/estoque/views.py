@@ -9,6 +9,20 @@ def produtos(request):
     # Renderiza o template HTML e passa os produtos para o contexto
     return render(request, 'estoque/produtos.html', {'produtos': produtos})
 
+
+def grafico_produtos(request):
+    # Obtendo os 5 produtos com maior quantidade
+    produtos = Produto.objects.order_by('-quantidade')[:5]
+
+    # Extraindo os dados necessários para o gráfico
+    nomes = [produto.nome for produto in produtos]
+    quantidades = [produto.quantidade for produto in produtos]
+
+    # Renderizando o template com os dados
+    return render(request, 'estoque/home.html', {
+        'nomes': nomes,
+        'quantidades': quantidades
+    })
 def produto_anuncios(request, produto_id):
     # Obtém o produto pelo ID
     produto = get_object_or_404(Produto, pk=produto_id)
@@ -19,7 +33,15 @@ def produto_anuncios(request, produto_id):
     # Renderiza o template HTML e passa os anúncios para o contexto
     return render(request, 'estoque/produtos.html', {'produto': produto, 'anuncios': anuncios})
 def home(request):
-    return render(request, 'estoque/home.html')
+    # Obter os 5 produtos com maior estoque
+    produtos = Produto.objects.order_by('-quantidade')[:5]
+    nomes = [produto.nome for produto in produtos]
+    quantidades = [produto.quantidade for produto in produtos]
+
+    return render(request, 'estoque/home.html', {
+        'nomes': nomes,
+        'quantidades': quantidades,
+    })
 
 def cadastrar(request):
     return render(request, "estoque/cadastrar.html")
