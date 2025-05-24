@@ -118,6 +118,26 @@ a:focus {
     text-decoration: underline;
 }
 
+/* Improve focus visibility for keyboard users */
+a:focus-visible,
+button:focus-visible,
+input[type="submit"]:focus-visible,
+input[type="button"]:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:not([tabindex="-1"]):focus-visible {
+    outline: 2px solid var(--link-hover-color);
+    outline-offset: 1px;
+    box-shadow: 0 0 0 3px var(--body-bg), 0 0 0 5px var(--link-hover-color);
+}
+
+/* For elements that already have a very distinct focus style, we might not need the generic one */
+.select2-container--admin-autocomplete.select2-container--focus .select2-selection:focus-visible {
+    outline: none; /* Prevent double outline if select2 handles its own */
+    box-shadow: 0 0 0 2px rgba(var(--body-quiet-color-rgb, 102, 102, 102), 0.5); /* Keep existing select2 focus */
+}
+
+
 a img {
     border: none;
 }
@@ -512,6 +532,7 @@ input:not([type]):focus, input[type=text]:focus, input[type=password]:focus,
 input[type=email]:focus, input[type=url]:focus, input[type=number]:focus,
 input[type=tel]:focus, textarea:focus, select:focus, .vTextField:focus {
     border-color: var(--body-quiet-color);
+    box-shadow: 0 0 0 2px rgba(var(--body-quiet-color-rgb, 102, 102, 102), 0.25); /* Adicionado para acessibilidade */
 }
 
 select {

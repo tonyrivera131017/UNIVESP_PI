@@ -101,6 +101,7 @@
 
 #toolbar #searchbar:focus {
     border-color: var(--body-quiet-color);
+    box-shadow: 0 0 0 2px rgba(var(--body-quiet-color-rgb, 102, 102, 102), 0.25); /* Adicionado para acessibilidade */
 }
 
 #toolbar form input[type="submit"] {
@@ -316,6 +317,7 @@
 
 #changelist .actions select:focus {
     border-color: var(--body-quiet-color);
+    box-shadow: 0 0 0 2px rgba(var(--body-quiet-color-rgb, 102, 102, 102), 0.25); /* Adicionado para acessibilidade */
 }
 
 #changelist .actions label {
@@ -340,4 +342,5 @@
 
 #changelist .actions .button:focus, #changelist .actions .button:hover {
     border-color: var(--body-quiet-color);
+    box-shadow: 0 0 0 2px rgba(var(--body-quiet-color-rgb, 102, 102, 102), 0.25); /* Adicionado para acessibilidade */
 }

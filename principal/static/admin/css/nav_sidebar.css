@@ -139,6 +139,7 @@
 
 #nav-filter:focus {
     border-color: var(--body-quiet-color);
+    box-shadow: 0 0 0 2px rgba(var(--body-quiet-color-rgb, 102, 102, 102), 0.25); /* Adicionado para acessibilidade */
 }
 
 #nav-filter.no-results {

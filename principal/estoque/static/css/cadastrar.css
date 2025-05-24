@@ -65,6 +65,7 @@
 .divisao_form input:focus {
     border-color: #2d5298;
     outline: none;
+    box-shadow: 0 0 0 3px rgba(45, 82, 152, 0.5); /* Aumentado para maior clareza */
 }
 
 /* Botão de Submissão */

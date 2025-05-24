@@ -59,6 +59,12 @@ body {
     background-color: #3a4f8a;
 }
 
+.botao:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px var(--primary);
+}
+
 /* Main Content Styling */
 /*.pagina {*/
 /*    padding: 20px;*/
@@ -134,6 +140,338 @@ body {
     max-width: 100%;
     height: 400px; /* Altura padrão para o gráfico */
     margin-top: 15px;
+}
+
+/* Visually hidden class for accessibility */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* High Contrast Mode Styles */
+body.high-contrast {
+    --hc-bg-color: #000000;
+    --hc-text-color: #FFFF00; /* Amarelo */
+    --hc-link-color: #FFFFFF; /* Branco */
+    --hc-link-hover-color: #ADFF2F; /* Verde-limão */
+    --hc-border-color: #FFFF00;
+    --hc-button-bg-color: #333333;
+    --hc-button-text-color: #FFFF00;
+    --hc-header-bg-color: #000000;
+    --hc-header-text-color: #FFFF00;
+    --hc-input-bg-color: #1a1a1a;
+    --hc-input-text-color: #FFFF00;
+    --hc-input-border-color: #FFFF00;
+    --hc-table-header-bg: #1a1a1a;
+    --hc-table-header-text: #FFFF00;
+    --hc-table-row-even-bg: #101010;
+    --hc-table-row-odd-bg: #000000;
+    --hc-card-bg-color: #000000;
+    --hc-card-border-color: #FFFF00;
+    --hc-card-shadow: none;
+    --hc-card-text-color: #FFFF00;
+    --hc-card-h3-color: #FFFF00;
+
+
+    background-color: var(--hc-bg-color) !important;
+    color: var(--hc-text-color) !important;
+}
+
+body.high-contrast .cabecalho {
+    background-color: var(--hc-header-bg-color) !important;
+    border-bottom: 3px solid var(--hc-border-color) !important;
+}
+
+body.high-contrast .logo,
+body.high-contrast .cabecalho .botao {
+    color: var(--hc-header-text-color) !important;
+}
+
+body.high-contrast .cabecalho .botao {
+    background-color: var(--hc-button-bg-color) !important;
+    border: 1px solid var(--hc-border-color) !important;
+}
+body.high-contrast .cabecalho .botao:hover,
+body.high-contrast .cabecalho .botao:focus-visible {
+    background-color: var(--hc-border-color) !important;
+    color: var(--hc-button-bg-color) !important;
+    outline-color: var(--hc-link-hover-color) !important;
+}
+
+body.high-contrast .botao,
+body.high-contrast button,
+body.high-contrast input[type="submit"],
+body.high-contrast input[type="button"],
+body.high-contrast .botao_form,
+body.high-contrast .botao_editar,
+body.high-contrast .botao_editar2,
+body.high-contrast .botao_excluirsim,
+body.high-contrast .botao_acao1,
+body.high-contrast .botao_acao2,
+body.high-contrast .botao_acao3 {
+    background-color: var(--hc-button-bg-color) !important;
+    color: var(--hc-button-text-color) !important;
+    border: 1px solid var(--hc-border-color) !important;
+}
+
+body.high-contrast .botao:hover,
+body.high-contrast button:hover,
+body.high-contrast input[type="submit"]:hover,
+body.high-contrast input[type="button"]:hover,
+body.high-contrast .botao_form:hover,
+body.high-contrast .botao_editar:hover,
+body.high-contrast .botao_editar2:hover,
+body.high-contrast .botao_excluirsim:hover,
+body.high-contrast .botao_acao1:hover,
+body.high-contrast .botao_acao2:hover,
+body.high-contrast .botao_acao3:hover {
+    background-color: var(--hc-border-color) !important;
+    color: var(--hc-button-bg-color) !important;
+}
+
+body.high-contrast a {
+    color: var(--hc-link-color) !important;
+}
+
+body.high-contrast a:hover {
+    color: var(--hc-link-hover-color) !important;
+}
+
+body.high-contrast .sessao,
+body.high-contrast .grafico-secao,
+body.high-contrast .container /* Para página de exclusão */ {
+    background-color: var(--hc-bg-color) !important;
+    border: 1px solid var(--hc-border-color) !important;
+    box-shadow: none !important;
+}
+
+body.high-contrast .subtitulo,
+body.high-contrast h2, /* Para subtitulo da pag de exclusão */
+body.high-contrast h3 /* Para card */ {
+    color: var(--hc-text-color) !important;
+}
+body.high-contrast .card h3 {
+    color: var(--hc-card-h3-color) !important;
+}
+
+
+body.high-contrast .lista_funcionalidades li {
+     color: var(--hc-text-color) !important;
+}
+
+body.high-contrast input[type="text"],
+body.high-contrast input[type="number"],
+body.high-contrast input[type="email"],
+body.high-contrast input[type="password"],
+body.high-contrast textarea,
+body.high-contrast select {
+    background-color: var(--hc-input-bg-color) !important;
+    color: var(--hc-input-text-color) !important;
+    border: 1px solid var(--hc-input-border-color) !important;
+}
+body.high-contrast input:focus,
+body.high-contrast textarea:focus,
+body.high-contrast select:focus {
+    box-shadow: 0 0 0 3px var(--hc-input-border-color) !important;
+    border-color: var(--hc-input-border-color) !important;
+}
+
+
+body.high-contrast table th {
+    background-color: var(--hc-table-header-bg) !important;
+    color: var(--hc-table-header-text) !important;
+    border-bottom: 1px solid var(--hc-border-color) !important;
+}
+
+body.high-contrast table td {
+    border-bottom: 1px solid var(--hc-border-color) !important;
+    color: var(--hc-text-color) !important;
+}
+
+body.high-contrast .lista-produtos tr:nth-child(even) {
+    background-color: var(--hc-table-row-even-bg) !important;
+}
+body.high-contrast .lista-produtos tr:nth-child(odd) {
+    background-color: var(--hc-table-row-odd-bg) !important;
+}
+
+body.high-contrast .lista-produtos tr:hover {
+    background-color: var(--hc-border-color) !important;
+    color: var(--hc-bg-color) !important;
+}
+body.high-contrast .lista-produtos tr:hover td,
+body.high-contrast .lista-produtos tr:hover a {
+    color: var(--hc-bg-color) !important;
+}
+
+
+body.high-contrast .rodape {
+    background-color: var(--hc-header-bg-color) !important;
+    color: var(--hc-header-text-color) !important;
+    border-top: 1px solid var(--hc-border-color) !important;
+}
+
+/* Ajustes para o gráfico em alto contraste */
+body.high-contrast #grafico {
+    border: 1px solid var(--hc-border-color);
+}
+
+body.high-contrast .chartjs-legend-item-text,
+body.high-contrast .chartjs-chart-title,
+body.high-contrast .chartjs-axis-title,
+body.high-contrast .chartjs-tick {
+    fill: var(--hc-text-color) !important;
+}
+
+body.high-contrast .chartjs-grid-lines {
+    stroke: var(--hc-border-color) !important;
+}
+
+/* Estilos para .card em modo de alto contraste */
+body.high-contrast .card {
+    background-color: var(--hc-card-bg-color) !important;
+    border: 1px solid var(--hc-card-border-color) !important;
+    box-shadow: var(--hc-card-shadow) !important;
+}
+
+body.high-contrast .card p {
+    color: var(--hc-card-text-color) !important;
+}
+
+
+/* Botão de Alto Contraste */
+#toggle-high-contrast {
+    margin-left: 10px; /* Posicionamento */
+    padding: 8px 16px; /* Similar ao .botao */
+    font-size: 16px; /* Similar ao .botao */
+    font-weight: 400; /* Similar ao .botao */
+    cursor: pointer;
+    border-radius: 4px; /* Similar ao .botao */
+    background-color: #1b3868; /* Similar ao .botao */
+    color: #ffffff; /* Similar ao .botao */
+    border: 1px solid #1b3868; /* Similar ao .botao */
+    transition: background-color 0.2s ease; /* Similar ao .botao */
+    text-decoration: none; /* Garantir que não pareça um link */
+    line-height: normal; /* Garantir consistência */
+    box-sizing: border-box; /* Garantir consistência */
+    -webkit-appearance: button; /* Estilo de botão em alguns navegadores */
+    -moz-appearance: button; /* Estilo de botão em alguns navegadores */
+    appearance: button; /* Estilo de botão */
+}
+
+#toggle-high-contrast:hover {
+    background-color: #3a4f8a; /* Similar ao .botao:hover */
+}
+
+#toggle-high-contrast:focus-visible {
+    outline: 2px solid #ffffff; /* Similar ao .botao:focus-visible */
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px var(--primary); /* Usar uma variável de cor primária se definida, ou um azul padrão */
+}
+
+
+/* Estilo do botão quando o modo de alto contraste está ATIVO */
+body.high-contrast #toggle-high-contrast {
+    background-color: var(--hc-button-bg-color) !important;
+    color: var(--hc-button-text-color) !important;
+    border: 1px solid var(--hc-border-color) !important;
+}
+
+body.high-contrast #toggle-high-contrast:hover,
+body.high-contrast #toggle-high-contrast:focus-visible {
+    background-color: var(--hc-border-color) !important;
+    color: var(--hc-button-bg-color) !important;
+    outline: 2px solid var(--hc-link-hover-color) !important; /* Foco visível em alto contraste */
+    outline-offset: 1px;
+    box-shadow: none !important;
+}
+
+// ...existing code...
+/* Estilos do Cabeçalho */
+.cabecalho {
+    background-color: #2d5399; /* Azul escuro para o cabeçalho */
+    color: #ffffff; /* Texto branco */
+    padding: 10px 20px; /* Aumentar o padding vertical e manter o horizontal */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #1b3868; /* Borda inferior mais escura */
+    min-height: 60px; /* Altura mínima para o cabeçalho */
+}
+
+.logo {
+    font-size: 2em; /* Tamanho da fonte do logo */
+    font-weight: bold;
+    margin: 0; /* Remover margem padrão do h1 */
+}
+
+.cabecalho nav {
+    display: flex; /* Usar flexbox para alinhar a lista de botões e o botão de alto contraste */
+    align-items: center; /* Alinhar itens verticalmente ao centro */
+}
+
+.cabecalho .botoes {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Remover margem padrão da ul */
+    display: flex; /* Alinhar os <li> em linha */
+}
+
+.cabecalho .botoes li {
+    margin-left: 10px; /* Espaçamento entre os botões de navegação */
+}
+.cabecalho .botoes li:first-child {
+    margin-left: 0; /* Remover margem do primeiro item */
+}
+
+
+.cabecalho .botao {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 15px; /* Padding dos botões */
+    border-radius: 4px;
+    background-color: #1b3868; /* Cor de fundo dos botões de navegação */
+    transition: background-color 0.3s ease;
+    display: inline-block; /* Para que o padding seja aplicado corretamente */
+    border: 1px solid transparent; /* Para manter o alinhamento quando o foco adicionar borda */
+}
+
+.cabecalho .botao:hover {
+    background-color: #0e2038; /* Cor de fundo ao passar o mouse */
+}
+
+/* Estilo específico para o botão de Alto Contraste para garantir consistência */
+#toggle-high-contrast {
+    margin-left: 20px; /* Espaçamento entre a lista de links e o botão de alto contraste */
+    /* Os estilos de .botao já são aplicados, mas podemos adicionar ou sobrescrever se necessário */
+    /* Exemplo: se precisar de um padding diferente */
+    /* padding: 8px 12px; */
+}
+
+/* Foco visível para botões no cabeçalho */
+.cabecalho .botao:focus-visible,
+#toggle-high-contrast:focus-visible {
+    outline: 2px solid var(--link-focus-color, #FFFF00); /* Amarelo para destaque no foco */
+    outline-offset: 2px;
+    border-color: var(--link-focus-color, #FFFF00);
+}
+
+body.high-contrast #toggle-high-contrast {
+    background-color: var(--hc-button-bg-color) !important;
+    color: var(--hc-button-text-color) !important;
+    border: 1px solid var(--hc-border-color) !important;
+}
+
+body.high-contrast #toggle-high-contrast:focus-visible {
+    outline-color: var(--hc-border-color) !important;
+    border-color: var(--hc-border-color) !important;
 }
 
 /* Improvements Summary */

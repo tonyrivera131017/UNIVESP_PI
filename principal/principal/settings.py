@@ -20,68 +20,70 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-py1v*(@eq@806zbrb*##s0uq^v6-n+3xv4@bu2lptn-_&ftwzo'
+SECRET_KEY = "django-insecure-py1v*(@eq@806zbrb*##s0uq^v6-n+3xv4@bu2lptn-_&ftwzo"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['3.211.30.203', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ["3.211.30.203", "localhost", "127.0.0.1"]
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'estoque',
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "estoque",
+    "rest_framework",  # Adicionado para API
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "django.middleware.security.SecurityMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = 'principal.urls'
+ROOT_URLCONF = "principal.urls"
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [],
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "context_processors": [
+                "django.template.context_processors.debug",
+                "django.template.context_processors.request",
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
             ],
         },
     },
 ]
 
-WSGI_APPLICATION = 'principal.wsgi.application'
+WSGI_APPLICATION = "principal.wsgi.application"
 
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',  # Se estiver usando PostgreSQL, por exemplo
-        'NAME': 'bd_SCE',
-        'USER': 'pi_univesp',
-        'PASSWORD': 'PIunivesp',
-        'HOST': 'database-univesp.chakokagese6.us-east-1.rds.amazonaws.com',  # Pode ser um IP ou um domínio
-        'PORT': '5432',  # Porta do banco de dados, geralmente 5432 para PostgreSQL
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",  # Se estiver usando PostgreSQL, por exemplo
+        "NAME": "bd_SCE",
+        "USER": "pi_univesp",
+        "PASSWORD": "PIunivesp",
+        # 'HOST': 'database-univesp.chakokagese6.us-east-1.rds.amazonaws.com',  # Pode ser um IP ou um domínio
+        "HOST": "localhost",  # Se estiver usando Docker, pode ser 'localhost' ou o nome do serviço no docker-compose
+        "PORT": "5434",  # Porta do banco de dados, geralmente 5432 para PostgreSQL
     }
 }
 
@@ -91,16 +93,16 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
 
@@ -108,9 +110,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = "UTC"
 
 USE_I18N = True
 
@@ -120,10 +122,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = "static/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 STATIC_ROOT = "/home/ubuntu/UNIVESP_PI/principal/static/"
+
+MELI_CLIENT_ID = "7264778803525107"
+MELI_CLIENT_SECRET = "VY6R5bH0n6h6MU34QwhcWcPXRJ0uRXR8"
+MELI_REFRESH_TOKEN_FILE = BASE_DIR / "estoque/refresh_token.json"

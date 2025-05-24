@@ -506,3 +506,12 @@ form .related-widget-wrapper ul {
 .clearable-file-input input {
     margin-top: 0;
 }
+
+.related-widget-wrapper-link:focus {
+    opacity: 1;
+    filter: grayscale(0);
+    outline: 2px solid var(--link-hover-color); /* Adicionado para acessibilidade */
+    outline-offset: 2px; /* Adicionado para acessibilidade */
+}
+
+/* GIS MAPS */

@@ -32,6 +32,7 @@
         <a href="#">Saídas</a>
         <a href="#">Relatórios</a> -->
             </ul>
+            <button id="toggle-high-contrast" class="botao">Alto Contraste</button>
         </nav>
     </header>
 
@@ -68,12 +69,15 @@
                             <td>{{ produto.quantidade }}</td>
                             <td>R$ {{ produto.preco }}</td>
                             <td>
-                                <div>
-                                <a class="botao_acao1" href="{% url 'editar_produto' produto.id %}">Editar</a>
+                                <div>                                <a class="botao_acao1" href="{% url 'editar_produto' produto.id %}">Editar</a>
                                 <a class="botao_acao2" href="{% url 'excluir_produto' produto.id %}">Excluir</a>
-                                {% for anuncio in produto.anuncios.all %}
-                                <a class="botao_acao3" target="_blank" href="https://produto.mercadolivre.com.br/{{ anuncio.mlb_id_formatado }}">Anúncio</a>
-                                {% endfor %}
+                                {% if produto.anuncios.exists %}
+                                    {% for anuncio in produto.anuncios.all %}
+                                    <a class="botao_acao3" target="_blank" href="https://produto.mercadolivre.com.br/{{ anuncio.mlb_id_formatado }}">Ver Anúncio</a>
+                                    {% endfor %}
+                                {% else %}
+                                    <a class="botao_acao1" href="{% url 'cadastrar_anuncio' produto.id %}">Vincular Anúncio</a>
+                                {% endif %}
                                 </div>
                             </td>
                         </tr>
@@ -106,9 +110,7 @@
     <footer class="rodape">
         <p>₢ 2024 SISControl. Todos os direitos reservados.</p>
     </footer>
-
-    <!-- <script src="{% static 'js/produtos.js' %}"></script> -->
-
+    <script src="{% static 'js/accessibility.js' %}"></script>
 </body>
 
 </html>

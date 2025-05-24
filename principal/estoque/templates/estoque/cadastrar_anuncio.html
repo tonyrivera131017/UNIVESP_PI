@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Vincular Anúncio</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cadastrar.css' %}">
+</head>
+<body>
+    <header class="cabecalho">
+        <h1 class="logo">SISControl</h1>
+        <nav>
+            <ul class="botoes">
+                <li><a class="botao" href="{% url 'home' %}">Home</a></li>
+                <li><a class="botao" href="{% url 'produtos' %}">Produtos</a></li>
+            </ul>
+            <button id="toggle-high-contrast" class="botao">Alto Contraste</button>
+        </nav>
+    </header>
+
+    <main class="pagina">
+        <section class="sessao">
+            <h2 class="subtitulo">Vincular anúncio ao produto "{{ produto.nome }}"</h2>
+            <form method="post" class="formulario_produto">
+                {% csrf_token %}
+                <div class="divisao_form">
+                    <label for="{{ form.mlb_id.id_for_label }}">MLB ID do Anúncio:</label>
+                    {{ form.mlb_id }}
+                    <small>Digite o ID do anúncio no Mercado Livre (ex: MLB123456789)</small>
+                </div>
+                <button class="botao_form" type="submit">Vincular Anúncio</button>
+                <a class="botao" href="{% url 'produtos' %}">Voltar</a>
+            </form>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p>© 2025 SISControl. Todos os direitos reservados.</p>
+    </footer>
+    <script src="{% static 'js/accessibility.js' %}"></script>
+</body>
+</html>

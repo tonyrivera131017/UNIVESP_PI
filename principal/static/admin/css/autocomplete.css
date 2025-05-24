@@ -169,6 +169,7 @@ select.admin-autocomplete {
 .select2-container--admin-autocomplete.select2-container--focus .select2-selection--multiple {
     border: solid var(--body-quiet-color) 1px;
     outline: 0;
+    box-shadow: 0 0 0 2px rgba(var(--body-quiet-color-rgb, 102, 102, 102), 0.5); /* Adicionado para acessibilidade */
 }
 
 .select2-container--admin-autocomplete.select2-container--disabled .select2-selection--multiple {

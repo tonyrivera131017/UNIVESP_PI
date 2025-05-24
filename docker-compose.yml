@@ -1,0 +1,11 @@
+services:
+  db:
+    image: postgres:15
+    container_name: univesp_pi_db
+    restart: always
+    environment:
+      POSTGRES_USER: pi_univesp
+      POSTGRES_PASSWORD: PIunivesp
+      POSTGRES_DB: bd_SCE
+    ports:
+      - "5434:5432"
