@@ -1,0 +1,26 @@
+version: 0.2
+
+env:
+  variables:
+    IMAGE_NAME: siscontrol
+    AWS_DEFAULT_REGION: us-east-1
+    ECR_REPO_URI: 867344440564.dkr.ecr.us-east-1.amazonaws.com/siscontrol
+
+phases:
+  pre_build:
+    commands:
+      - echo "Fazendo login no Amazon ECR..."
+      - aws --version
+      - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
+  build:
+    commands:
+      - echo "Iniciando o build da imagem Docker..."
+      - docker build -t $IMAGE_NAME .
+      - docker tag $IMAGE_NAME:latest $ECR_REPO_URI:latest
+  post_build:
+    commands:
+      - echo "Fazendo push da imagem para o Amazon ECR..."
+      - docker push $ECR_REPO_URI:latest
+artifacts:
+  files:
+    - '**/*'
