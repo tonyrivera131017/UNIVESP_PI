@@ -1,0 +1,15 @@
+// filepath: c:\pycharm-projects\UNIVESP_PI\.vscode\settings.json
+{
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        ".", // Diretório de início para descoberta, relativo ao CWD
+        "-p",
+        "tests.py"
+    ],
+    "python.testing.cwd": "${workspaceFolder}/principal", // Crucial: aponta para a pasta com manage.py
+    "python.envFile": "${workspaceFolder}/.env", // Carrega variáveis de ambiente do .env
+    "python.testing.unittestEnabled": true,
+    "python.testing.pytestEnabled": false // Desabilite se não estiver usando pytest
+    // "django.settingsModule": "principal.settings" // Esta linha pode ser redundante se DJANGO_SETTINGS_MODULE está no .env, mas não deve prejudicar.
+}

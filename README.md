@@ -31,8 +31,9 @@ Foram implementadas funcionalidades para tornar o sistema mais acessível:
 O desenvolvimento do projeto é gerenciado utilizando **Git**. O código-fonte é versionado, permitindo o rastreamento de alterações, colaboração e a possibilidade de reverter para versões anteriores caso necessário. Recomenda-se o uso de um repositório remoto (como GitHub, GitLab) para backup e colaboração.
 
 ### 6. Testes
-A implementação de testes é uma prática contínua no projeto para garantir a qualidade e a estabilidade do software.
-- **Testes Unitários:** (Assumindo que serão/foram implementados) Testes unitários são desenvolvidos para validar o comportamento de componentes individuais, como funções em `views.py` e métodos nos modelos em `models.py`. Django possui um framework de testes integrado para facilitar essa tarefa.
+- Foram criados testes unitários em `estoque/tests.py` usando `django.test.TestCase`.
+- **Views:** `SimpleViewsTests` verifica que as páginas principais (`home`, `produtos`, `cadastrar`) retornam HTTP 200 e usam o template esperado.
+- **Modelo:** `ProdutoModelSimpleTest` valida que o método `__str__` do modelo `Produto` retorna o nome correto.
 
 ### 7. Uso e Fornecimento de API
 
