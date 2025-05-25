@@ -1,0 +1,60 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      DJANGO_SETTINGS_MODULE: principal.settings
+      PYTHONPATH: principal
+    steps:
+      # Checkout source
+      - uses: actions/checkout@v4
+
+      # Setup Python environment
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      # Install Python dependencies
+      - name: Install Python dependencies
+        run: pip install -r principal/requirements.txt
+
+      # Run Django tests
+      - name: Run Django tests
+        working-directory: principal
+        run: python manage.py test estoque
+
+      # Iniciar ssh-agent e adicionar chave privada
+      - name: Start SSH Agent
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      # Adicionar servidor ao known_hosts
+      - name: Add server to known hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H ${{ secrets.HOST }} >> ~/.ssh/known_hosts
+
+      # Deploy para EC2
+      - name: Deploy to EC2
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.USER }}@${{ secrets.HOST }} << 'EOF'
+            cd /caminho/para/siscontrol
+            git pull origin main
+            source venv/bin/activate
+            pip install -r principal/requirements.txt
+            python principal/manage.py migrate --noinput
+            python principal/manage.py collectstatic --noinput
+            sudo systemctl restart gunicorn
+            sudo systemctl restart nginx
+          EOF
+
+
